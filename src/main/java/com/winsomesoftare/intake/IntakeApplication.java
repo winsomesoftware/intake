@@ -1,13 +1,13 @@
-package com.example.demo;
+package com.winsomesoftare.intake;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class IntakeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(IntakeApplication.class, args);
 	}
 
 }
