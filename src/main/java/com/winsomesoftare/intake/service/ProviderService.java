@@ -5,6 +5,7 @@ import com.winsomesoftare.intake.domain.Provider;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -12,6 +13,15 @@ import java.util.List;
 public class ProviderService {
 
     public List<Provider> getAllProviders() {
-        return null;
+
+        Provider provider = new Provider();
+        provider.setId(1L);
+        provider.setName("Great West Rehab");
+        provider.setNpi(23345232L);
+
+        List<Provider> providers = new ArrayList<>();
+        providers.add(provider);
+
+        return providers;
     }
 }
