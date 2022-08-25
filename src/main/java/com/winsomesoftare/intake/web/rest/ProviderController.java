@@ -1,7 +1,9 @@
 package com.winsomesoftare.intake.web.rest;
 
+import com.winsomesoftare.intake.domain.Provider;
 import com.winsomesoftare.intake.model.ProviderDto;
 import com.winsomesoftare.intake.service.ProviderService;
+import com.winsomesoftare.intake.web.mapper.ProviderMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.cfg.NotYetImplementedException;
 import org.springframework.http.HttpStatus;
@@ -16,23 +18,32 @@ import java.util.List;
 public class ProviderController {
 
     private final ProviderService providerService;
+    private final ProviderMapper providerMapper;
 
-    public ProviderController(ProviderService providerService) {
+    public ProviderController(ProviderService providerService, ProviderMapper providerMapper) {
+
         this.providerService = providerService;
+        this.providerMapper = providerMapper;
     }
 
     @GetMapping()
+    @ResponseStatus(HttpStatus.OK)
     public List<ProviderDto> getAllProviders() {
 
-        throw new NotYetImplementedException("Not Yet Implemented");
+         List<Provider> providerDomain = providerService.getAllProviders();
+
+         return providerMapper.map(providerDomain);
+
     }
 
     @GetMapping("/{providerid}")
+    @ResponseStatus(HttpStatus.OK)
     public ProviderDto getProvider(@PathVariable("providerid") Long providerId) {
         throw new NotYetImplementedException("Not Yet Implemented");
     }
 
-    @PutMapping
+    @PutMapping("/{providerid}")
+    @ResponseStatus(HttpStatus.OK)
     public ProviderDto updateProvider(@PathParam("providerid") Long providerId, @RequestBody ProviderDto providerDto) {
         throw new NotYetImplementedException("Not Yet Implemented");
     }
