@@ -3,7 +3,6 @@ package com.winsomesoftare.intake.web.rest;
 import com.winsomesoftare.intake.BaseControllerUnitTest;
 import com.winsomesoftare.intake.ControllerUnitTest;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
